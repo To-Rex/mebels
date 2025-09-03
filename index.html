@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="LuxuryMebel - Premium mebel ishlab chiqaruvchi kompaniya. Yuqori sifat va zamonaviy dizayn." />
     <meta name="keywords" content="mebel, furniture, premium, luxury, Toshkent, O'zbekiston" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="LuxuryMebel" />
+    <link rel="canonical" href="https://luxurymebel.netlify.app/" />
     <title>LuxuryMebel - Premium Mebel Kolleksiyasi</title>
     
     <!-- Preload critical fonts -->
@@ -23,9 +26,25 @@
     <meta name="twitter:title" content="LuxuryMebel - Premium Mebel Kolleksiyasi" />
     <meta name="twitter:description" content="Premium mebel ishlab chiqaruvchi kompaniya. Yuqori sifat va zamonaviy dizayn." />
     <meta name="twitter:image" content="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" />
+    
+    <!-- Netlify Identity Widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Netlify Identity Script -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/profile";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
